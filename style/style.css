@@ -2,61 +2,16 @@
     padding: 0;
     margin: 0;
 }
-
-.bi {
-    margin: 0;
-    padding: 0;
-}
-
-.contain{
-    background-color: rgb(250, 247, 72) !important;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-link{
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../asset/header-bg.jpg');
+    background-size: cover;
+    background-position: center;
     color: white;
-    
-}
+    padding: 100px 20px;
+    border-radius: 5px;
+  }
+  .navbar-brand img {
+    border-radius: 50%;
+  }
 
-.bi{
-    color: blueviolet;
-    font-size: 1.5em;
-}
-.img-proyecto1{
-    background-image: url('asset/tedelimon.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-}
 
-.pb-2 {
-    font-family:'Times New Roman', Times, serif;
-    font-size: 3em;
-    font-weight: bold;
-    text-align: center;
-    grid-row: span;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-top: 20px;
-}
-.navbar {
-    background-color: rgb(250, 247, 72) !important;
-}
-
-#app {
-    font-family:'Times New Roman', Times, serif;
- }
-
-#icon{
-    width: 50px;
-    height: 50px;
-    padding: 4px;
-}
-
-.card-header {
-    background-color: rgb(102, 102, 102);
-}
-.btn{
-    color: white;
-}
