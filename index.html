@@ -23,19 +23,14 @@
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="#registro">Registrar Vehículo</a></li>
-          <li class="nav-item"><a class="nav-link" href="#baseDatos">Base de Datos</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
-          <li class="nav-item">
-            <a class="btn btn-outline-primary me-2" href="#iniciarSesion">Iniciar Sesión</a>
-            <a class="btn btn-primary" href="#registrar">Registrar</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="">Contacto</a></li>
+          <li class="nav-item"><a class="btn btn-outline-primary me-2" href="pages/login.html">Iniciar Sesión</a></li>
+          <li class="nav-item"><a class="btn btn-primary" href="pages/nuevosUsuarios.html">Registrar</a></li>
         </ul>
       </div>
     </div>
   </nav>
-  
+
   <header class="hero-section text-center d-flex align-items-center justify-content-center">
     <div class="container">
       <h1 class="display-4 fw-bold text-white">Plataforma de Monitoreo Vehicular</h1>
@@ -43,61 +38,59 @@
       <a href="#registro" class="btn btn-lg btn-primary mt-3">Comenzar Ahora</a>
     </div>
   </header>
-  
 
   <main class="container my-5">
     <section id="registro" class="my-5">
       <div class="card shadow-sm p-4">
         <h2 class="pb-2">Registrar Vehículo</h2>
-        <form>
+        <form action="/registrar" method="POST" enctype="multipart/form-data">
           <div class="row g-3">
             <div class="col-md-6">
-              <label class="form-label">Fecha</label>
-              <input type="date" class="form-control">
+              <label class="form-label" for="fecha">Fecha</label>
+              <input type="date" class="form-control" id="fecha" name="fecha">
             </div>
             <div class="col-md-6">
-              <label class="form-label">Kilometraje inicial</label>
-              <input type="number" class="form-control">
+              <label class="form-label" for="km_inicial">Kilometraje inicial</label>
+              <input type="number" class="form-control" id="km_inicial" name="kilometraje_inicial">
             </div>
             <div class="col-md-6">
-              <label class="form-label">Litros de combustible</label>
-              <input type="number" step="0.01" class="form-control">
+              <label class="form-label" for="combustible">Litros de combustible</label>
+              <input type="number" step="0.01" class="form-control" id="combustible" name="litros_combustible">
             </div>
             <div class="col-md-6">
-              <label class="form-label">Último mantenimiento</label>
-              <input type="date" class="form-control">
+              <label class="form-label" for="mantenimiento">Último mantenimiento</label>
+              <input type="date" class="form-control" id="mantenimiento" name="ultimo_mantenimiento">
             </div>
             <div class="col-md-6">
-              <label class="form-label">Número económico</label>
-              <input type="text" class="form-control">
+              <label class="form-label" for="numero_economico">Número económico</label>
+              <input type="text" class="form-control" id="numero_economico" name="numero_economico">
             </div>
             <div class="col-md-6">
-              <label class="form-label">Placas</label>
-              <input type="text" class="form-control">
+              <label class="form-label" for="placas">Placas</label>
+              <input type="text" class="form-control" id="placas" name="placas">
             </div>
             <div class="col-12">
-              <label class="form-label">Foto del vehículo</label>
-              <input type="file" class="form-control">
+              <label class="form-label" for="foto_vehiculo">Foto del vehículo</label>
+              <input type="file" class="form-control" id="foto_vehiculo" name="foto_vehiculo">
             </div>
           </div>
           <button type="submit" class="btn btn-success mt-4">Registrar</button>
         </form>
       </div>
     </section>
-    
+
+    <section id="mapa" class="my-5">
+      <h2 class="text-center mb-3">Ubicación en Tiempo Real</h2>
+      <div id="map" style="height: 500px;"></div>
+    </section>
   </main>
 
-  <footer class="bg-dark text-white py-4">
-    <div class="container text-center">
-      <p class="mb-1">© 2025 Raven Vision. Todos los derechos reservados.</p>
-      <ul class="list-inline">
-        <li class="list-inline-item"><a href="#privacidad" class="text-white">Política de Privacidad</a></li>
-        <li class="list-inline-item"><a href="#terminos" class="text-white">Términos de Servicio</a></li>
-        <li class="list-inline-item"><a href="#contacto" class="text-white">Contacto</a></li>
-      </ul>
-    </div>
+  <footer class="bg-dark text-white py-4 text-center">
+    <p>© 2025 Raven Vision. Todos los derechos reservados.</p>
   </footer>
 
-  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="backend/Routes/scriptmp.js"></script>
 </body>
 </html>
