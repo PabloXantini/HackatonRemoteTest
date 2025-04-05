@@ -129,3 +129,6 @@ node backend/server.js
 - Asegúrate de tener habilitada la Google Maps JavaScript API.
 - Configura correctamente el servicio de correo para el envío de códigos.
 - Usa HTTPS en producción para proteger WebSocket y datos personales.
+
+# HackatonRemoteTest
+This is an implementation via remote for view an webpage with mobile seminative support (PWA)
