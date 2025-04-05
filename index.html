@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <link rel="stylesheet" href="style/style.css">
-  <link rel="icon" href="images/icon.png" sizes="64x64">
+  <link rel="icon" href="images/ICON.png" sizes="64x64">
   <title>Raven Vision</title>
 </head>
 
@@ -15,8 +15,7 @@
   <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-transparent">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <img src="images/icon.png" alt="Icono Empresa" width="50" height="50" class="me-2">
-        <span class="fw-bold">Raven Vision</span>
+        <img src="images/ICONO.png" alt="Icono Empresa" width="130" height="130" class="me-2">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -35,52 +34,14 @@
     <div class="container">
       <h1 class="display-4 fw-bold text-white">Plataforma de Monitoreo Vehicular</h1>
       <p class="lead text-white">Gestión eficiente y monitoreo en tiempo real del rendimiento de tus vehículos.</p>
-      <a href="#registro" class="btn btn-lg btn-primary mt-3">Comenzar Ahora</a>
+      <a href="pages/seleccionProyecto.html" class="btn btn-lg btn-primary mt-3">Comenzar Ahora</a>
     </div>
   </header>
 
   <main class="container my-5">
-    <section id="registro" class="my-5">
-      <div class="card shadow-sm p-4">
-        <h2 class="pb-2">Registrar Vehículo</h2>
-        <form action="/registrar" method="POST" enctype="multipart/form-data">
-          <div class="row g-3">
-            <div class="col-md-6">
-              <label class="form-label" for="fecha">Fecha</label>
-              <input type="date" class="form-control" id="fecha" name="fecha">
-            </div>
-            <div class="col-md-6">
-              <label class="form-label" for="km_inicial">Kilometraje inicial</label>
-              <input type="number" class="form-control" id="km_inicial" name="kilometraje_inicial">
-            </div>
-            <div class="col-md-6">
-              <label class="form-label" for="combustible">Litros de combustible</label>
-              <input type="number" step="0.01" class="form-control" id="combustible" name="litros_combustible">
-            </div>
-            <div class="col-md-6">
-              <label class="form-label" for="mantenimiento">Último mantenimiento</label>
-              <input type="date" class="form-control" id="mantenimiento" name="ultimo_mantenimiento">
-            </div>
-            <div class="col-md-6">
-              <label class="form-label" for="numero_economico">Número económico</label>
-              <input type="text" class="form-control" id="numero_economico" name="numero_economico">
-            </div>
-            <div class="col-md-6">
-              <label class="form-label" for="placas">Placas</label>
-              <input type="text" class="form-control" id="placas" name="placas">
-            </div>
-            <div class="col-12">
-              <label class="form-label" for="foto_vehiculo">Foto del vehículo</label>
-              <input type="file" class="form-control" id="foto_vehiculo" name="foto_vehiculo">
-            </div>
-          </div>
-          <button type="submit" class="btn btn-success mt-4">Registrar</button>
-        </form>
-      </div>
-    </section>
 
     <section id="mapa" class="my-5">
-      <h2 class="text-center mb-3">Ubicación en Tiempo Real</h2>
+      <h2 class="text-center mb-3">Ubicación</h2>
       <div id="map" style="height: 500px;"></div>
     </section>
   </main>

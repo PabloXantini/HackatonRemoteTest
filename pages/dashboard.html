@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Raven Vision</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="../style/style.css">
+  <link rel="icon" href="public/images/ICON.png" sizes="64x64">
+</head>
+
+<body>
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="public/images/ICONO.png" alt="Logo" width="40" class="me-2">
+        Raven Vision
+      </a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a id="proyectoNombre" class="nav-link active" href="#">Proyecto: <strong></strong></a>
+          </li>
+          <li class="nav-item">
+            <a id="flotillaCantidad" class="nav-link" href="#">Flotilla: <strong></strong></a>
+          </li>
+        </ul>
+        
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Cuenta: <strong>usuario@correo.com</strong></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container my-5">
+    <div class="row">
+      <!-- Estadísticas -->
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Rendimiento Promedio</h5>
+            <p class="display-6 text-success">12.5 km/L</p>
+          </div>
+        </div>
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Vehículo con Mejor Rendimiento</h5>
+            <p class="display-6">Unidad 023</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Consumo Total de Combustible</h5>
+            <p class="display-6 text-danger">1,250 L</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gráficos -->
+      <div class="col-md-8">
+        <div class="card mb-4">
+          <div class="card-header">Kilometraje por Vehículo</div>
+          <div class="card-body">
+            <canvas id="graficoBarras"></canvas>
+          </div>
+        </div>
+        <div class="card mb-4">
+          <div class="card-header">Rendimiento de Combustible (línea)</div>
+          <div class="card-body">
+            <canvas id="graficoLineas"></canvas>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">Distribución de Consumo (pastel)</div>
+          <div class="card-body">
+            <canvas id="graficoPastel"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-center bg-dark text-white py-3">
+    <p class="mb-0">© 2025 Raven Vision. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    // Gráfico de Barras
+    new Chart(document.getElementById('graficoBarras'), {
+      type: 'bar',
+      data: {
+        labels: ['Unidad 001', 'Unidad 002', 'Unidad 003'],
+        datasets: [{
+          label: 'Kilómetros recorridos',
+          data: [1200, 950, 1400],
+          backgroundColor: 'rgba(54, 162, 235, 0.6)'
+        }]
+      }
+    });
+
+    // Gráfico de Líneas
+    new Chart(document.getElementById('graficoLineas'), {
+      type: 'line',
+      data: {
+        labels: ['Semana 1', 'Semana 2', 'Semana 3', 'Semana 4'],
+        datasets: [{
+          label: 'Rendimiento km/L',
+          data: [12, 11.5, 13, 12.7],
+          borderColor: 'rgba(255, 99, 132, 1)',
+          tension: 0.3
+        }]
+      }
+    });
+
+    // Gráfico de Pastel
+    new Chart(document.getElementById('graficoPastel'), {
+      type: 'pie',
+      data: {
+        labels: ['Unidad 001', 'Unidad 002', 'Unidad 003'],
+        datasets: [{
+          data: [400, 300, 550],
+          backgroundColor: [
+            'rgba(255, 206, 86, 0.8)',
+            'rgba(75, 192, 192, 0.8)',
+            'rgba(153, 102, 255, 0.8)'
+          ]
+        }]
+      }
+    });
+  </script>
+
+  <script>
+    const nombreProyecto = localStorage.getItem("nombreProyecto") || "Sin nombre";
+    const cantidadFlotillas = localStorage.getItem("cantidadFlotillas") || "1";
+
+    document.querySelector("#proyectoNombre strong").textContent = nombreProyecto;
+    document.querySelector("#flotillaCantidad strong").textContent = `Flota ${cantidadFlotillas}`;
+  </script>
+
+</body>
+</html>
